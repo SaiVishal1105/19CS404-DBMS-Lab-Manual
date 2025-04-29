@@ -1,4 +1,4 @@
-# Experiment 2: DDL Commands
+![image](https://github.com/user-attachments/assets/85ff9a97-f424-4e06-8220-4647877b9dac)# Experiment 2: DDL Commands
 
 ## AIM
 To study and implement DDL commands and different types of constraints.
@@ -123,17 +123,24 @@ JoinDate DATE
 
 **Question 2**
 ---
-![image](https://github.com/user-attachments/assets/b71031ba-69f6-4c84-be26-c3ce9b38efeb)
+
+![image](https://github.com/user-attachments/assets/b2b70941-a300-4ec3-9c51-98d7f83728b4)
+
 
 
 ```sql
-INSERT INTO products(ProductID, ProductName, Price, Stock)
-SELECT ProductID, ProductName, Price, Stock FROM Discontinued_products;
+CREATE TABLE Locations(
+LocationID INTEGER,
+LocationName  TEXT,
+Address TEXT
+);
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/32d5e2eb-d814-41c8-8015-64e7d352f02e)
+
+![image](https://github.com/user-attachments/assets/e00c1eec-5043-4446-a2c8-ee8afaa41e0a)
+
 
 
 **Question 3**
@@ -159,37 +166,44 @@ ON DELETE CASCADE
 
 **Question 4**
 ---
-![image](https://github.com/user-attachments/assets/2930a59b-f943-41bc-9c5c-b563454c18be)
+
+![image](https://github.com/user-attachments/assets/621d7480-bc24-4506-bb99-d1aac375ad2a)
+
 
 
 ```sql
-INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS)
-VALUES(205,'Olivia Green','F',NULL,NULL);
-INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS)
-VALUES(207,'Liam Smith','M','Mathematic',85);
-INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS)
-VALUES(208,'Sophia Johns','F','Science',NULL);
+CREATE TABLE Orders(
+    OrderID INTEGER PRIMARY KEY,
+    OrderDate DATE NOT NULL,
+    CustomerID INTEGER,
+    FOREIGN KEY(CustomerID)REFERENCES Customers(CustomerID)
+);
 
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/3c1615de-7198-4ebf-952e-c8ed54cbf28d)
+![image](https://github.com/user-attachments/assets/93de3a8e-37e5-44a8-a83d-01c0e7e8978b)
+
+
 
 
 **Question 5**
 ---
-![image](https://github.com/user-attachments/assets/872e0e3a-bc6e-4ef2-889d-b174b442b451)
+
+![image](https://github.com/user-attachments/assets/6190693e-8b8b-405c-b284-ed46bca8afe3)
+
 
 
 ```sql
-INSERT INTO Customers(CustomerID,Name,Address)
-VALUES(304,'Peter Parker','Spider St')
+ALTER TABLE employee
+ADD COLUMN designation varchar(50);
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/f470eb50-3e71-462b-b4ef-e507551f3da1)
+![image](https://github.com/user-attachments/assets/f74ff937-f633-44df-a123-cb30ff97f408)
+
 
 
 **Question 6**
@@ -228,17 +242,19 @@ Stock INTEGER CHECK(Stock>=0)
 
 **Question 8**
 ---
-![image](https://github.com/user-attachments/assets/62dd3b21-463d-45a1-bedd-97fb3b608727)
+
+![image](https://github.com/user-attachments/assets/153008f6-4fde-4b1f-9835-9065a46cf853)
 
 
 ```sql
-INSERT INTO Employee(EmployeeID, Name, Department, Salary)
-SELECT EmployeeID, Name, Department, Salary FROM Former_employees;
+ALTER TABLE customer
+ADD COLUMN discount DECIMAL(5,2);
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/67a394c9-d0b3-40c7-a838-7a0efa3d49bc)
+
+![Screenshot 2025-04-29 141257](https://github.com/user-attachments/assets/83cbf050-ee72-4450-bb1c-0677e72f0c4b)
 
 
 **Question 9**
@@ -257,17 +273,25 @@ ALTER TABLE Student_details ADD COLUMN Address VARCHAR(100);
 
 **Question 10**
 ---
-![image](https://github.com/user-attachments/assets/7c09ac06-56cd-4989-bb73-b4322584a60b)
+
+
+![Screenshot 2025-04-29 141558](https://github.com/user-attachments/assets/771b2889-7e46-4fd7-8f12-9e0fd09f5a29)
 
 
 ```sql
-INSERT INTO Products(ProductID, Name, Category)
-VALUES(104,'Tablet','Electronics');
+CREATE TABLE Products(
+ProductID INTEGER PRIMARY KEY,
+ProductName TEXT UNIQUE NOT NULL,
+Price REAL CHECK (Price>0),
+StockQuantity INTEGER CHECK (StockQuantity>=0)
+);
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/1f4d583f-8fdb-4449-9e8f-19b206e3d7f7)
+
+![Screenshot 2025-04-29 141615](https://github.com/user-attachments/assets/72da2449-3183-4778-8ddf-5d2b2341645a)
+
 
 
 
