@@ -47,123 +47,168 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/9dd00853-53f3-4145-b258-d89df64b3f1f)
 
 ```sql
--- Paste your SQL code below for Question 1
+INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS) VALUES(205,'Olivia Green','F',NULL,NULL);
+INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS) VALUES(207,'Liam Smith','M','Mathematics',85);
+INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS) VALUES(208,'Sophia Johns','F','Science',NULL);
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/1f9c4fa9-8b9f-4fbf-bbbb-556fef81e476)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/6c17dd17-d4a7-4f63-bc56-8eda25e6fe4c)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+UPDATE products
+SET product_name = 'Grapefruit' WHERE product_id = 4;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/1683eb9a-011b-4c67-a819-039650e17b37)
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/4ac3da12-16b7-4af4-9d4c-903b9fc40cfa)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+UPDATE Employees
+SET salary =
+CASE 
+WHEN department_id = 40 THEN salary*1.25
+WHEN department_id = 90 THEN salary*1.15
+WHEN department_id = 110 THEN salary*1.10
+ELSE salary
+END;
+UPDATE Employees
+SET salary = ROUND(salary,0);
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/f4398d1e-db92-4688-bf91-d2082681d386)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+
+![Screenshot 2025-04-29 135028](https://github.com/user-attachments/assets/3d4d55b4-267b-4992-b93c-16fbde8705ea)
 
 ```sql
--- Paste your SQL code below for Question 4
+UPDATE SALES
+SET total_sell_price = quantity*sell_price WHERE product_id = 10; 
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/8ebf283a-8033-4cf2-a626-7ab1d3f3408c)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+
+![image](https://github.com/user-attachments/assets/cc1bac02-29d9-4e05-a102-6cbeb571ed21)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+DELETE FROM Doctors
+WHERE specialization IS NULL;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/007d71aa-2af5-4f2a-9a5a-b21cbc02837f)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+
+![image](https://github.com/user-attachments/assets/5f24a5f0-eba6-4fbf-985e-35399e7224ab)
 
 ```sql
--- Paste your SQL code below for Question 6
+DELETE FROM Customer
+WHERE CUST_COUNTRY ='UK' AND WORKING_AREA = 'London' AND GRADE < 3;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/af5c52b6-0e33-4a9a-bf84-6fefad80be15)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+
+![image](https://github.com/user-attachments/assets/b6aa4535-6e0c-4c0e-997e-36227879ead3)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+DELETE FROM Doctors
+WHERE specialization = 'Pediatrics' AND first_name = 'Michael';
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/0cbb2be7-54ff-4df8-a5d3-11c1e2b14d8a)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+
+![image](https://github.com/user-attachments/assets/6ba4b344-c738-4cf0-8540-41dc3b2845c3)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT COUNT(*)
+FROM EmployeeInfo WHERE department = 'HR'; 
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/dd9a77aa-dcbc-45e2-babc-d2333070b975)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+
+![image](https://github.com/user-attachments/assets/69cbe509-5b71-4fbf-875c-258ad25b6959)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT customer_id, cust_name, city, grade,salesman_id FROM customer
+WHERE grade>100;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/27c5db7d-02bd-4e57-ab2f-aba7bf73de86)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+
+![image](https://github.com/user-attachments/assets/e86665a7-8064-4d9b-b8f5-a7f54f8b8313)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT id, value1,
+CASE 
+WHEN value1>50 THEN 'High'
+ELSE 'Low' 
+END AS value_category
+FROM Calculations;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/30a63098-de46-40d9-810f-d957dcc16195)
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
