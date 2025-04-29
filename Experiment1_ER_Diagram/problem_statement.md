@@ -53,21 +53,60 @@ University
 ## ER Diagram:
 ![Untitled Diagram drawio (2)](https://github.com/user-attachments/assets/46828c3b-a8da-4aac-92ff-c2fdf3b17f00)
 
-## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+### Entities and Attributes:
 
-## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
+- Student: Admission number (PK), Name, Date of birth, Email, Phone number  
+- University: [No attributes shown in the diagram]  
+- Department: Department ID (PK), Department name  
+- Program: Program ID (PK), Program name  
+- Course: Course code (PK), Course name, Credits, Prerequisite  
+- Instructor: Instructor ID (PK), Name, Email  
 
-## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+---
 
-## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+### Relationships and Constraints:
+
+- Stores Info (University–Student) 
+  - Cardinality: One university stores many students (1:N)  
+  - Participation: Total on Student (every student belongs to a university)
+
+- Contains (University–Department) 
+  - Cardinality: One university contains many departments (1:N)  
+  - Participation: Total on Department
+
+- Grouped by (Program–Department) 
+  - Cardinality: Many programs grouped by one department (N:1)  
+  - Participation: Total on Program
+
+- Enroll (Student–Program) 
+  - Cardinality: Many students enroll in many programs (M:N)  
+  - Participation: Partial (students may or may not enroll)
+
+- *Offers (Program–Course)*  
+  - Cardinality: One program offers many courses (1:N)  
+  - Participation: Partial on Course
+
+- Teach (Instructor–Course)  
+  - Cardinality: Many instructors can teach many courses (M:N)  
+  - Participation: Partial on both sides
+
+---
+
+### Extension (Prerequisite / Billing):
+
+- Prerequisite is modeled as an attribute of the *Course* entity.  
+  - It likely refers to the course code of another course. This could be better represented as a recursive relationship on the Course entity, where a course has another course as its prerequisite.
+
+---
+
+### Design Choices:
+
+- Chose *Student, **Course, **Instructor, **Program, **Department, and **University* as entities because they represent core components of a typical academic system.
+- Many-to-many relationships like Enroll and Teach reflect real-world flexibility (e.g., students taking multiple programs or instructors teaching multiple courses).
+- Prerequisite as an attribute was a simplification, but a recursive relationship might better support complex rules (e.g., multiple prerequisites).
+- All keys and attributes were chosen based on logical identifiers (like Admission number, Program ID, etc.).
+
+
 
 ## RESULT
 ER diagram for University is created successfully.
