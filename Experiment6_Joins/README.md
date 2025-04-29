@@ -54,123 +54,173 @@ ON table1.column = table2.column;
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/ece34717-b634-48b5-b304-d44a6ac1b42f)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT c.customer_id,c.cust_name,c.city,c.grade,c.salesman_id
+FROM customer c
+LEFT JOIN orders o ON c.customer_id=o.customer_id
+WHERE o.ord_date BETWEEN '2012-07-01' AND '2012-07-30';
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/cfd7b5aa-4145-47d7-9c43-97ed447dbbef)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/8b4afcfb-9b80-4def-bc0f-247924c7a56c)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT s.name
+FROM salesman s
+LEFT JOIN customer c ON s.salesman_id=c.salesman_id
+WHERE c.city='London';
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/edc98a03-b6ef-4f72-b54f-dfa5035a17d2)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/1075003f-dc7a-4f87-bc42-85920ea6019a)
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT p.first_name AS patient_name,d.first_name AS doctor_name
+FROM patients p
+INNER JOIN doctors d ON p.patient_id=d.doctor_id
+WHERE p.date_of_birth > '1990-01-01';
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/411e89b5-daee-42d2-9916-7ff9ca0cc09d)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/6f520fa8-6f25-4758-ae02-fa4e1c420a47)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT s.name AS Salesman, c.cust_name, c.city
+FROM salesman s
+INNER JOIN customer c
+ON s.city = c.city;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/845f00eb-7647-4330-b00d-ddd7733da0c8)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/496e3333-97ac-487b-a75f-165c921715b1)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT p.first_name AS "patient_name",d.first_name AS "doctor_name"
+FROM patients p
+INNER JOIN doctors d ON p.doctor_id = d.doctor_id
+WHERE p.discharge_date IS NULL;
+
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/a6a51d6b-f5c7-42b0-9735-040b2c1e1465)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/91ae71a4-538a-40fc-afe4-5a193651ed6b)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT p.first_name AS "patient_name",d.first_name AS "doctor_name"
+FROM patients p
+INNER JOIN doctors d ON p.doctor_id = d.doctor_id
+WHERE p.discharge_date IS NOT NULL;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/9c7a9058-3a40-422b-bab6-24b51ce367b2)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/c2501ffb-73a8-4c68-b444-203d8c51c0ab)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT n.*
+FROM nurses n
+INNER JOIN departments d ON n.department_id=d.department_id
+WHERE d.department_name='Pediatrics';
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/31bebbc2-c57b-41f4-b0d4-cf3c98cc936b)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/bb1ab3a0-64d9-4420-b56d-ddaeaafdce99)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT o.ord_no, o.purch_amt, c.cust_name, c.city
+FROM orders o
+JOIN customer c ON o.customer_id = c.customer_id
+WHERE o.purch_amt BETWEEN 500 AND 2000;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/035037ac-74ad-49bb-9839-7e46a243b373)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/3321f5cc-7f02-44fc-ba58-0aff6b5317e5)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT p.first_name AS patient_name,t.test_name
+FROM patients p
+INNER JOIN test_results t ON p.patient_id=t.patient_id;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/3ae92ab6-35fb-40eb-b200-e93f3c91eb9a)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/007ea367-a37a-4c4a-af97-8df888c64fb8)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT p.first_name AS patient_name
+FROM patients p
+INNER JOIN test_results t ON p.patient_id = t.patient_id
+WHERE t.test_name = 'Blood Pressure';
+
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/5b852264-7f47-490d-b0a1-03e8d7e52b49)
+
 
 
 ## RESULT
