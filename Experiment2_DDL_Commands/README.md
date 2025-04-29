@@ -105,123 +105,170 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/7ff5e5eb-40e8-4201-84c2-ec8cf4369ac8)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE Members(
+MemberID INTEGER,
+MemberName TEXT,
+JoinDate DATE
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/cd08c493-ffd9-4139-bfa3-6c9d1db277d4)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/b71031ba-69f6-4c84-be26-c3ce9b38efeb)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+INSERT INTO products(ProductID, ProductName, Price, Stock)
+SELECT ProductID, ProductName, Price, Stock FROM Discontinued_products;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/32d5e2eb-d814-41c8-8015-64e7d352f02e)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/b01549f5-0ccc-4af2-bd92-cc827e67edd0)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE TABLE item(
+item_id TEXT PRIMARY KEY,
+item_desc TEXT NOT NULL,
+rate INTEGER,
+icom_id TEXT CHECK(LENGTH(icom_id)=4),
+FOREIGN KEY (icom_id)REFERENCES company(com_id)
+ON UPDATE CASCADE
+ON DELETE CASCADE
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/3d50fd89-2e01-4068-b9cf-010ad7fe96ea)
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/2930a59b-f943-41bc-9c5c-b563454c18be)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS)
+VALUES(205,'Olivia Green','F',NULL,NULL);
+INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS)
+VALUES(207,'Liam Smith','M','Mathematic',85);
+INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS)
+VALUES(208,'Sophia Johns','F','Science',NULL);
+
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/3c1615de-7198-4ebf-952e-c8ed54cbf28d)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/872e0e3a-bc6e-4ef2-889d-b174b442b451)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+INSERT INTO Customers(CustomerID,Name,Address)
+VALUES(304,'Peter Parker','Spider St')
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/f470eb50-3e71-462b-b4ef-e507551f3da1)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/54f909c0-80cd-4287-86ed-c507ee6cd9ba)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+ALTER TABLE employee ADD COLUMN department_id INTEGER;
+ALTER TABLE employee ADD COLUMN manager_id INTEGER DEFAULT NULL;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/4b8e3261-5588-4bdc-a11e-7a04b5c42f99)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/2f08110e-1fcc-454a-ab90-c4c61d5068f8)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Products(
+ProductID  INTEGER PRIMARY KEY,
+ProductName INTEGER NOT NULL,
+Price REAL CHECK(Price>0),
+Stock INTEGER CHECK(Stock>=0)
+)
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/21749ddf-4c0a-4eaf-9242-9f320ed8df43)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/62dd3b21-463d-45a1-bedd-97fb3b608727)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+INSERT INTO Employee(EmployeeID, Name, Department, Salary)
+SELECT EmployeeID, Name, Department, Salary FROM Former_employees;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/67a394c9-d0b3-40c7-a838-7a0efa3d49bc)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/91deda84-035c-4510-a6db-44d30af6e1bc)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+ALTER TABLE Student_details ADD COLUMN MobileNumber NUMBER;
+ALTER TABLE Student_details ADD COLUMN Address VARCHAR(100);
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/4a9640f5-d1d1-4533-90ed-362e3413092e)
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/7c09ac06-56cd-4989-bb73-b4322584a60b)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Products(ProductID, Name, Category)
+VALUES(104,'Tablet','Electronics');
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/1f4d583f-8fdb-4449-9e8f-19b206e3d7f7)
+
 
 
 ## RESULT
