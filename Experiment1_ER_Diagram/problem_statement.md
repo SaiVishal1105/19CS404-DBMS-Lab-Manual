@@ -45,13 +45,13 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission - Student Name SAI VISHAL D 212223230180
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+University
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![Untitled Diagram drawio (2)](https://github.com/user-attachments/assets/46828c3b-a8da-4aac-92ff-c2fdf3b17f00)
 
 ## Entities and Attributes:
 - Entity1: Attributes
@@ -70,3 +70,4 @@ University / Hospital (choose one)
 Brief explanation of why you chose certain entities, relationships, and assumptions
 
 ## RESULT
+ER diagram for University is created successfully.
